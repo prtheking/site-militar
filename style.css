@@ -1,45 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1c1c1c;
-    color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background-color: #003d1f;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.8em;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+nav {
+  background-color: #02612d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+nav .logo {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00ff88;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  color: #02612d;
+  margin-bottom: 20px;
+}
+
+.missao {
+  background-color: #e6f5ea;
+  padding: 25px;
+  border-left: 6px solid #02612d;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+footer {
+  background-color: #003d1f;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+#topoBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #02612d;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px #02612d;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #02612d;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
   }
-  header {
-    background-color: #004225;
-    padding: 20px;
-    text-align: center;
+
+  nav ul.show {
+    display: flex;
   }
-  header h1 {
-    margin: 0;
-    font-size: 2.5em;
+
+  .menu-toggle {
+    display: block;
   }
-  nav {
-    background-color: #033d1a;
-    padding: 10px;
-    text-align: center;
-  }
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
-  section {
-    padding: 40px 20px;
-  }
-  .missao {
-    background-color: #2e2e2e;
-    padding: 20px;
-    border-left: 5px solid #0f0;
-    margin-top: 20px;
-  }
-  footer {
-    background-color: #004225;
-    text-align: center;
-    padding: 15px;
-    color: #aaa;
-  }
+}
+</style>

@@ -1,50 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forças Armadas - Exército Fictício</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Site oficial do Exército Nacional fictício. Protegendo a soberania com honra." />
+  <title>Exército Nacional</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<body>
+<body onload="mostrarBoasVindas()">
+
+  <button id="topoBtn" onclick="voltarAoTopo()">↑ Topo</button>
 
   <header>
     <h1>Exército Nacional</h1>
-    <p>Defendendo a pátria com honra e coragem</p>
+    <p id="boasVindas">Carregando mensagem...</p>
   </header>
 
   <nav>
-    <a href="#inicio">Início</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#missao">Missão</a>
-    <a href="#contato">Contato</a>
+    <div class="logo">Exército</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#missao">Missão</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
   </nav>
 
   <section id="inicio">
     <h2>Bem-vindo ao Exército Nacional</h2>
-    <p>Estamos comprometidos com a proteção do nosso povo e soberania nacional.</p>
+    <p>Trabalhamos incansavelmente pela segurança, soberania e liberdade do nosso povo. Nosso compromisso é com a paz e a defesa da pátria.</p>
   </section>
 
   <section id="sobre">
     <h2>Sobre Nós</h2>
-    <p>O Exército Nacional é formado por homens e mulheres treinados para proteger nosso território e manter a paz.</p>
+    <p>Somos uma força de defesa comprometida com a integridade territorial e a ordem constitucional. Nossos soldados são treinados com excelência e disciplina.</p>
   </section>
 
   <section id="missao" class="missao">
     <h2>Missão</h2>
-    <p>Garantir a defesa da pátria, proteger a soberania e colaborar com a segurança interna quando necessário.</p>
+    <p>Garantir a soberania nacional, proteger a população e atuar em apoio à segurança interna sempre que for necessário.</p>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Email: contato@exercitonacional.gov.br</p>
-    <p>Telefone: (11) 1234-5678</p>
-    <p>Endereço: Av. da Defesa, 1000 - Capital</p>
+    <p><strong>Email:</strong> contato@exercitonacional.gov.br</p>
+    <p><strong>Telefone:</strong> (11) 1234-5678</p>
+    <p><strong>Endereço:</strong> Av. da Defesa, 1000 - Capital</p>
   </section>
 
   <footer>
-    &copy; 2025 Exército Nacional - Todos os direitos reservados.
+    &copy; 2025 Exército Nacional — Todos os direitos reservados.
   </footer>
+  <script>
+    // Botão "voltar ao topo"
+    window.onscroll = function () {
+      const btn = document.getElementById("topoBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
 
+    function voltarAoTopo() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Menu responsivo
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    // Boas-vindas com hora do dia
+    function mostrarBoasVindas() {
+      const agora = new Date();
+      const hora = agora.getHours();
+      let mensagem;
+
+      if (hora < 12) {
+        mensagem = "Bom dia! Honra e coragem ao amanhecer.";
+      } else if (hora < 18) {
+        mensagem = "Boa tarde! Seguimos firmes na defesa da pátria.";
+      } else {
+        mensagem = "Boa noite! O dever nunca descansa.";
+      }
+
+      document.getElementById("boasVindas").innerText = mensagem;
+    }
+  </script>
 </body>
 </html>
